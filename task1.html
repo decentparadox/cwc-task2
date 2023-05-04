@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TASK -2</title>
+    <style>
+      body{
+        background: #030014;
+
+        background-image: url("bg-2-n.png");
+        background-repeat: no-repeat;
+        background-position-x: 0px;
+        width: 100%;
+        height: 100%;
+      }
+      @font-face {
+        font-family: dirtyline;
+        src: url("Dirtyline36daysoftype2022.otf");
+      }
+      @font-face {
+        font-family: clashdisplay;
+        src: url("ClashDisplay-Medium.otf");
+      }
+      #text {
+        font-size: 48px;
+        text-align: center;
+        margin-top: 30vh;
+      }
+      div{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        padding-top: 20px;
+        margin-left: 20px;
+      }
+          .slider {
+      -webkit-appearance: none;
+      width: 10%;
+      height: 6px;
+      border-radius: 5px;
+      background: #ddd;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider:hover {
+      opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 10%;
+      background: red;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 10%;
+      background: green;
+      cursor :pointer;
+    }
+          
+      
+    </style>
+  </head>
+  <body>
+    <div class="mainbox" style="width: 50%;height: 400px;background-color: rgba(236, 236, 236,0.6) ;margin-left: 325px; margin-top: 150px;border-radius: 13px;"></div>
+    <div id="text"><p style="font-family:dirtyline;margin-top: -575px;margin-left: -130px;">Aum Namah Shivaya</p></div>
+    
+    <div>
+      <label for="red"><p style="font-family: clashdisplay;padding-right: 10px;color: red;margin-top: -500px;margin-left: -190px;">Red:</p></label>
+      <input style="margin-top: -500px;margin-left: -130px;" type="range" id="red" class ="slider "min="0" max="255" value="0">
+    </div>
+    <div>
+      <label for="green"><p style="font-family: clashdisplay;padding-right: 10px; color: green;margin-top: -450px;margin-left: -190px;">Green:</p></label>
+      <input style="margin-top: -450px;margin-left: -130px;" type="range" id="green" class="slider" min="0" max="255" value="0">
+    </div>
+    <div>
+      <label for="blue"><p style="font-family: clashdisplay;padding-right: 10px; color: blue;margin-top: -400px;margin-left: -190px;">Blue:</p></label>
+      <input style="margin-top: -400px;margin-left: -130px;" type="range" id="blue" class="slider" min="0" max="255" value="0">
+    </div>
+    
+    <script>
+      const text = document.getElementById('text');
+      const redSlider = document.getElementById('red');
+      const greenSlider = document.getElementById('green');
+      const blueSlider = document.getElementById('blue');
+
+      const updateTextColor = () => {
+        const redValue = redSlider.value;
+        const greenValue = greenSlider.value;
+        const blueValue = blueSlider.value;
+        text.style.color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+      };
+
+      redSlider.addEventListener('input', updateTextColor);
+      greenSlider.addEventListener('input', updateTextColor);
+      blueSlider.addEventListener('input', updateTextColor);
+    </script>
+  </body>
+</html>
